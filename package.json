@@ -48,12 +48,16 @@
     "unbundle": "node ./src/tools/script-for-os.js",
     "unbundle:default": "echo 'ERROR: Could not detect host platform'",
     "unbundle:unix": "bash ./src/unix/unbundle.sh",
-    "unbundle:windows": "PowerShell -NoProfile -ExecutionPolicy Bypass src\\windows\\unbundle.ps1"
+    "unbundle:windows": "PowerShell -NoProfile -ExecutionPolicy Bypass src\\windows\\unbundle.ps1",
+    "install-hex": "node ./src/tools/script-for-os.js",
+    "install-hex:windows": "cd ./src/hex/ && install-win.bat",
+    "install-hex:unix": "bash ./src/hex/install-linux.sh",
+    "install-hex:default": "echo 'ERROR: Could not detect host platform'"
   },
   "dependencies": {
-    "@jessety/pm2-logrotate": "^2.7.1",
+    "@jessety/pm2-logrotate": "2.7.1",
     "node-windows": "1.0.0-beta.6",
-    "pm2": "5.2.2"
+    "pm2": "5.3.0"
   },
   "devDependencies": {
     "@jessety/eslint-config": "^2.4.0",
