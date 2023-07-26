@@ -2,10 +2,13 @@
 echo "=== Setup PM2 and HEX ==="
 
 echo "Setup PM2"
-sudo npm run setup
+#sudo npm run setup
+sudo npm install pm2 -g
+sudo npm install pm2-logrotate -g
+sudo pm2 startup
 
 echo "setup http-server"
-npm install -g http-server
+sudo npm install -g http-server
 
 echo "Add HEX-API Server service"
 cd ../PLC-Studio-API-Server
